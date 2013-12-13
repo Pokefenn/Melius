@@ -1,7 +1,7 @@
 package melius_commons.pokefenn
 
 import cpw.mods.fml.common.network.NetworkMod
-import cpw.mods.fml.common.{FMLCommonHandler, Mod}
+import cpw.mods.fml.common.{SidedProxy, FMLCommonHandler, Mod}
 import cpw.mods.fml.common.event.{FMLPostInitializationEvent, FMLInitializationEvent, FMLPreInitializationEvent}
 import cpw.mods.fml.common.Mod.{Instance, EventHandler}
 import java.util.logging.Logger
@@ -22,6 +22,7 @@ import melius_commons.pokefenn.configuration.ConfigurationHandler
 
 @Mod(modid = "melius", name = "Melius", version = "0.0.0",  modLanguage = "scala")
 @NetworkMod(channels = Array("melius"), clientSideRequired = true, serverSideRequired = false)
+@SidedProxy(clientSide = "melius_commons.pokefenn.proxy.ClientProxy", serverSide = "melius_commons.pokefenn.proxy.CommonProxy")
 object Melius {
 
 
@@ -36,7 +37,7 @@ object Melius {
 
     ConfigurationHandler.init(new File(event.getModConfigurationDirectory.getAbsolutePath + File.separator + Strings.modid + File.separator + Strings.name + ".cfg"))
 
-    ModBlocks.init()
+    //ModBlocks.init()
 
 
   }
