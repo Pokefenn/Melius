@@ -15,6 +15,7 @@ class BlockChestOre(id:Int) extends Block(id:Int, Material.rock) {
 
   this.setUnlocalizedName(Strings.CHEST_ORE_NAME)
   this.setHardness(1)
+  this.setC
 
 
 

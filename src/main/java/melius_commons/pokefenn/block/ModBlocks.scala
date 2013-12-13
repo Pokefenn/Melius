@@ -1,9 +1,8 @@
 package melius_commons.pokefenn.block
 
 import cpw.mods.fml.common.registry.GameRegistry
-import melius_commons.pokefenn.lib.Strings
+import melius_commons.pokefenn.lib.{BlockIds, Strings}
 import net.minecraft.block.Block
-import melius_commons.pokefenn.lib.BlockIds
 
 
 /**
@@ -16,14 +15,17 @@ import melius_commons.pokefenn.lib.BlockIds
 object ModBlocks {
 
   var multiFurnace: Block = null
+  var chestOre: Block = null
 
 
   def init(){
 
 
     multiFurnace = new BlockMultiFurnace(BlockIds.MULTI_FURNACE)
+    chestOre = new BlockChestOre(BlockIds.CHEST_ORE)
 
     GameRegistry.registerBlock(multiFurnace, Strings.MULTI_FURNACE_NAME)
+    GameRegistry.registerBlock(chestOre, Strings.CHEST_ORE_NAME)
 
 }
 

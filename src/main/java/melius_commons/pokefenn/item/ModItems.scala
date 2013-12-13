@@ -20,7 +20,7 @@ object ModItems {
 
     metaData = new ItemMetaData(ItemIds.META_DATA);
 
-    //GameRegistry.registerItem(metaData, Strings.META_DATA_NAME)
+    GameRegistry.registerItem(metaData, Strings.META_DATA_NAME)
 
   }
 

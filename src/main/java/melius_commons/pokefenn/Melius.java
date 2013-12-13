@@ -32,6 +32,7 @@ import java.util.logging.Logger;
 
 @Mod(modid = Strings.modid, name = Strings.name, version = Strings.version)
 @NetworkMod(channels = { Strings.modid }, clientSideRequired = true, serverSideRequired = false, packetHandler = PacketHandler.class)
+
 public class Melius {
 
     @Instance(Strings.modid)

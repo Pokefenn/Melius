@@ -28,7 +28,7 @@ public class ItemMetaData extends Item {
 
     public ItemMetaData(int id){
 
-        super(id - 256);
+        super(id);
         this.setHasSubtypes(true);
         this.setCreativeTab(Melius.tabsMelius);
 

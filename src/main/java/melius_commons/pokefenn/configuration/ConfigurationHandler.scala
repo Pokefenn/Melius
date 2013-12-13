@@ -4,7 +4,7 @@ import java.io.File
 import net.minecraftforge.common.Configuration
 import cpw.mods.fml.common.FMLLog
 import java.util.logging.Level
-import melius_commons.pokefenn.lib.{Strings, BlockIds}
+import melius_commons.pokefenn.lib.{BlockIds, Strings}
 
 /**
  * Created with IntelliJ IDEA.
@@ -20,7 +20,8 @@ object ConfigurationHandler {
     try {
       configuration.load
 
-      BlockIds.MULTI_FURNACE = configuration.getBlock(Strings.MULTI_FURNACE_NAME, BlockIds.MULTI_FURNACE_DEFAULT).getInt(BlockIds.MULTI_FURNACE_DEFAULT)
+      BlockIds.MULTI_FURNACE = configuration.getBlock(Strings.MULTI_FURNACE_NAME, BlockIds.MULTI_FURNACE_DEFUALT).getInt(BlockIds.MULTI_FURNACE_DEFUALT)
+      BlockIds.CHEST_ORE = configuration.getBlock(Strings.CHEST_ORE_NAME, BlockIds.CHEST_ORE_DEFAULT).getInt(BlockIds.CHEST_ORE_DEFAULT)
 
     }
     catch {
