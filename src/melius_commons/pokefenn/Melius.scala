@@ -1,11 +1,12 @@
 package melius_commons.pokefenn
 
 import cpw.mods.fml.common.network.NetworkMod
-import cpw.mods.fml.common.Mod
+import cpw.mods.fml.common.{FMLCommonHandler, Mod}
 import cpw.mods.fml.common.event.{FMLPostInitializationEvent, FMLInitializationEvent, FMLPreInitializationEvent}
 import cpw.mods.fml.common.Mod.{Instance, EventHandler}
 import java.util.logging.Logger
 import melius_commons.pokefenn.packet._
+import cpw.mods.fml.relauncher.Side
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,7 +17,7 @@ import melius_commons.pokefenn.packet._
  */
 
 @Mod(modid = Melius.modid, name = Melius.name, version = Melius.version,  modLanguage = "scala")
-@NetworkMod(channels = Array(Melius.modid), clientSideRequired = true, serverSideRequired = false, packetHandler = classOf[PacketHandler])
+@NetworkMod(channels = Array(Melius.modid), clientSideRequired = true, serverSideRequired = false)
 object Melius {
 
 
