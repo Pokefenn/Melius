@@ -9,13 +9,13 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import cpw.mods.fml.common.registry.GameRegistry;
-import melius_commons.pokefenn.block.BlockMultiFurnace;
 import melius_commons.pokefenn.block.ModBlocks;
 import melius_commons.pokefenn.configuration.ConfigurationHandler;
 import melius_commons.pokefenn.item.ModItems;
 import melius_commons.pokefenn.lib.Strings;
 import melius_commons.pokefenn.packet.PacketHandler;
 import melius_commons.pokefenn.proxy.CommonProxy;
+import melius_commons.pokefenn.tileentity.TileMultiFurnace;
 import melius_commons.pokefenn.util.CreativeTabMelius;
 import net.minecraft.creativetab.CreativeTabs;
 
@@ -60,7 +60,8 @@ public class Melius {
     @EventHandler
     public void load(FMLInitializationEvent event) {
 
-        GameRegistry.registerTileEntity(BlockMultiFurnace.class, Strings.TE_MULTI_FURNACE_NAME);
+        GameRegistry.registerTileEntity(TileMultiFurnace.class, Strings.TE_MULTI_FURNACE_NAME);
+        GameRegistry.registerTileEntity(TileChestOre.class, Strings.TE_CHEST_ORE_NAME);
 
 
     }

@@ -9,10 +9,10 @@ import net.minecraft.entity.player.EntityPlayer
  * Created with IntelliJ IDEA.
  * User: Pokefenn
  * Date: 13/12/13
- * Time: 15:13
+ * Time: 16:03
 
  */
-class TileMultiFurnace extends TileEntity with IInventory {
+class TileChestOre extends TileEntity with IInventory {
 
   final val INVENTORY_SIZE: Int = 1
   final val INVENTORY_SLOT_INDEX: Int = 0
@@ -23,7 +23,7 @@ class TileMultiFurnace extends TileEntity with IInventory {
 
 
 
-  val TEMP_VAL = 1;
+  //val TEMP_VAL = 1;
 
   def closeChest(){
 
@@ -93,4 +93,6 @@ class TileMultiFurnace extends TileEntity with IInventory {
     return true;
 
   }
+
+
 }
