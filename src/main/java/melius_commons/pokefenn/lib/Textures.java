@@ -1,5 +1,7 @@
 package melius_commons.pokefenn.lib;
 
+import net.minecraft.util.ResourceLocation;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Pokefenn
@@ -12,6 +14,8 @@ public class Textures {
     public static final String ARMOR_SHEET_LOCATION = "textures/armor/";
     public static final String GUI_SHEET_LOCATION = "textures/gui/";
     public static final String EFFECTS_LOCATION = "textures/effects/";
+
+    public static final ResourceLocation GUI_CHEST_ORE = "";
 
 
 

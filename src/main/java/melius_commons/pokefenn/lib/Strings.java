@@ -9,6 +9,7 @@ package melius_commons.pokefenn.lib;
 public class Strings {
 
     public static final String RESOURCE_PREFIX = "melius:";
+    public static final String CONTAINER_INVENTORY = "container.inventory";
 
     public static final String modid = "melius";
     public static final String name = "Melius";
