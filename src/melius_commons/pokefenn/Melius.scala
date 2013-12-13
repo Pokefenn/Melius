@@ -7,6 +7,7 @@ import cpw.mods.fml.common.Mod.{Instance, EventHandler}
 import java.util.logging.Logger
 import melius_commons.pokefenn.packet._
 import cpw.mods.fml.relauncher.Side
+import melius_commons.pokefenn.lib.Strings
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,17 +17,13 @@ import cpw.mods.fml.relauncher.Side
 
  */
 
-@Mod(modid = Melius.modid, name = Melius.name, version = Melius.version,  modLanguage = "scala")
-@NetworkMod(channels = Array(Melius.modid), clientSideRequired = true, serverSideRequired = false)
+@Mod(modid = "melius", name = "Melius", version = "0.0.0",  modLanguage = "scala")
+@NetworkMod(channels = Array("melius"), clientSideRequired = true, serverSideRequired = false)
 object Melius {
 
 
-  @Instance(Melius.modid) var instance: Melius.type = null
-  def modid = "melius"
-  def name = "Melius"
-  def version = "0.0.0"
-
-  final val logger: Logger = Logger.getLogger(Melius.modid)
+  @Instance("melius") var instance: Melius.type = null
+  final val logger: Logger = Logger.getLogger("melius")
 
 
 
