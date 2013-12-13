@@ -1,13 +1,23 @@
 package melius_commons.pokefenn;
 
 import cpw.mods.fml.common.Mod;
+import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLPostInitializationEvent;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
+import melius_commons.pokefenn.block.ModBlocks;
+import melius_commons.pokefenn.configuration.ConfigurationHandler;
 import melius_commons.pokefenn.lib.Strings;
 import melius_commons.pokefenn.packet.PacketHandler;
 import melius_commons.pokefenn.proxy.CommonProxy;
+import melius_commons.pokefenn.util.CreativeTabMelius;
 import net.minecraft.creativetab.CreativeTabs;
+
+import java.io.File;
+import java.util.logging.Logger;
 
 /**
  * Created with IntelliJ IDEA.
@@ -27,6 +37,31 @@ public class Melius {
     public static CommonProxy proxy;
 
     public static CreativeTabs tabsMelius = new CreativeTabMelius(CreativeTabs.getNextID(), Strings.modid);
+
+    public static final Logger logger = Logger.getLogger(Strings.name);
+
+
+    @EventHandler
+    public void preInit(FMLPreInitializationEvent event) {
+
+        ConfigurationHandler.init(new File(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + Strings.modid + File.separator + Strings.name + ".cfg"));
+
+        ModBlocks.init();
+
+    }
+
+    @EventHandler
+    public void load(FMLInitializationEvent event) {
+
+
+    }
+
+
+    @EventHandler
+    public void modsLoaded(FMLPostInitializationEvent event) {
+
+
+    }
 
 
 
