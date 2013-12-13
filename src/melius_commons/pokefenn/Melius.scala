@@ -8,6 +8,9 @@ import java.util.logging.Logger
 import melius_commons.pokefenn.packet._
 import cpw.mods.fml.relauncher.Side
 import melius_commons.pokefenn.lib.Strings
+import melius_commons.pokefenn.block.ModBlocks
+import java.io.File
+import melius_commons.pokefenn.configuration.ConfigurationHandler
 
 /**
  * Created with IntelliJ IDEA.
@@ -31,6 +34,9 @@ object Melius {
 
   @EventHandler def preInit(event: FMLPreInitializationEvent) {
 
+    ConfigurationHandler.init(new File(event.getModConfigurationDirectory.getAbsolutePath + File.separator + Strings.modid + File.separator + Strings.name + ".cfg"))
+
+    ModBlocks.init()
 
 
   }

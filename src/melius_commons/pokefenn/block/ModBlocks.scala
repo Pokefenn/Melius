@@ -5,6 +5,7 @@ import melius_commons.pokefenn.lib.Strings
 import net.minecraft.block.Block
 import melius_commons.pokefenn.lib.BlockIds
 
+
 /**
  * Created with IntelliJ IDEA.
  * User: Pokefenn
@@ -20,7 +21,7 @@ object ModBlocks {
   def init(){
 
 
-    multiFurnace = new BlockMultiFurnace(ItemIds.MULTI_FURNACE)
+    multiFurnace = new BlockMultiFurnace(BlockIds.MULTI_FURNACE)
 
     GameRegistry.registerBlock(multiFurnace, Strings.MULTI_FURNACE_NAME)
 
