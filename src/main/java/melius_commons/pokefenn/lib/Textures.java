@@ -1,5 +1,7 @@
 package melius_commons.pokefenn.lib;
 
+import melius_commons.pokefenn.util.ResourceLocationHelper;
+import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.util.ResourceLocation;
 
 /**
@@ -15,7 +17,11 @@ public class Textures {
     public static final String GUI_SHEET_LOCATION = "textures/gui/";
     public static final String EFFECTS_LOCATION = "textures/effects/";
 
-    public static final ResourceLocation GUI_CHEST_ORE = "";
+    public static final ResourceLocation VANILLA_BLOCK_TEXTURE_SHEET = TextureMap.locationBlocksTexture;
+    public static final ResourceLocation VANILLA_ITEM_TEXTURE_SHEET = TextureMap.locationItemsTexture;
+
+    public static final ResourceLocation GUI_CHEST_ORE = ResourceLocationHelper.getResourceLocation(GUI_SHEET_LOCATION + "chestOre.png");
+
 
 
 

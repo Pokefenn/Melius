@@ -1,9 +1,10 @@
 package melius_commons.pokefenn.client.gui
 
 import cpw.mods.fml.common.network.IGuiHandler
-import net.minecraft.entity.player.EntityPlayer
+import net.minecraft.entity.player.{InventoryPlayer, EntityPlayer}
 import net.minecraft.world.World
 import melius_commons.pokefenn.lib.GuiIds
+import melius_commons.pokefenn.tileentity.TileChestOre
 
 /**
  * Created with IntelliJ IDEA.
@@ -23,10 +24,12 @@ class GuiHandler extends IGuiHandler {
 
   def getClientGuiElement(ID: Int, player: EntityPlayer, world: World, x: Int, y: Int, z: Int): AnyRef = {
 
+    /*
+
     if(ID == GuiIds.CHEST_ORE_GUI_ID){
 
-      return new GuiChestOre
-    }
+      return new GuiChestOre(inventoryPlayer: InventoryPlayer, tileChestOre: TileChestOre)
+    } */
 
     return null;
 
