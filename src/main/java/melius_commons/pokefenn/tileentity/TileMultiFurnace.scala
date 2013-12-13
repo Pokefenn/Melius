@@ -12,15 +12,28 @@ import net.minecraft.entity.player.EntityPlayer
  * Time: 15:13
 
  */
-class TileMultiFurnace extends TileEntity with IInventory {
+object TileMultiFurnace extends TileEntity with IInventory {
+
+  final val INVENTORY_SIZE: Int = 1
+  final val INVENTORY_SLOT_INDEX: Int = 0
+
+  private var inventory: Array[ItemStack] = null
+
+  inventory = new Array[ItemStack](INVENTORY_SIZE)
+
+
 
   val TEMP_VAL = 1;
 
   def closeChest(){
 
+    //No code here due to it not being a chest xD
+
   }
 
   def openChest(){
+
+    //Again, not a chest :p
 
   }
 
@@ -30,7 +43,7 @@ class TileMultiFurnace extends TileEntity with IInventory {
 
   def getSizeInventory: Int = {
 
-    return TEMP_VAL;
+    return inventory.length
 
   }
 
