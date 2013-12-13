@@ -30,6 +30,7 @@ class BlockChestOre(id:Int) extends BlockContainer(id:Int, Material.rock) {
 
   override def onBlockActivated(world: World, x: Int, y: Int, z: Int, player: EntityPlayer, side: Int, hitX: Float, hitY: Float, hitZ: Float): Boolean = {
     if (player.isSneaking) return false
+
     else {
 
       if (!world.isRemote) {
@@ -37,6 +38,7 @@ class BlockChestOre(id:Int) extends BlockContainer(id:Int, Material.rock) {
         val tileChestOre: TileChestOre = world.getBlockTileEntity(x, y, z).asInstanceOf[TileChestOre]
         if (tileChestOre != null) {
 
+          System.out.println("guithingy")
           player.openGui(Melius.instance, GuiIds.CHEST_ORE_GUI_ID, world, x, y, z)
         }
       }

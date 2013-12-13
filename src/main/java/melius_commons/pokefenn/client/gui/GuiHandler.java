@@ -31,6 +31,12 @@ public class GuiHandler implements IGuiHandler {
     @Override
     public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 
+        if (ID == GuiIds.CHEST_ORE_GUI_ID) {
+            TileChestOre tileChestOre = (TileChestOre) world.getBlockTileEntity(x, y, z);
+            return new GuiChestOre(player.inventory, tileChestOre);
+        }
+
+        return null;
 
     }
 }
