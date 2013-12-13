@@ -4,6 +4,7 @@ import net.minecraft.tileentity.TileEntity
 import net.minecraft.inventory.IInventory
 import net.minecraft.item.ItemStack
 import net.minecraft.entity.player.EntityPlayer
+import melius_commons.pokefenn.lib.Strings
 
 /**
  * Created with IntelliJ IDEA.
@@ -55,19 +56,44 @@ class TileChestOre extends TileEntity with IInventory {
 
   def decrStackSize(slotIndex: Int, decrementAmount: Int): ItemStack = {
 
-    return ItemStack;
+    var itemStack: ItemStack = getStackInSlot(slotIndex)
+    if (itemStack != null) {
+
+      if (itemStack.stackSize <= decrementAmount) {
+
+        setInventorySlotContents(slotIndex, null)
+      }
+
+      else {
+
+        itemStack = itemStack.splitStack(decrementAmount)
+        if (itemStack.stackSize == 0) {
+
+          setInventorySlotContents(slotIndex, null)
+        }
+
+      }
+
+    }
+    return itemStack
 
   }
 
   def getStackInSlotOnClosing(slotIndex: Int): ItemStack = {
 
-    return ItemStack;
+    val itemStack: ItemStack = getStackInSlot(slotIndex)
+
+    if (itemStack != null) {
+
+      setInventorySlotContents(slotIndex, null)
+    }
+    return itemStack
 
   }
 
   def getInvName: String = {
 
-    return "tempValue";
+    return Strings.INVENTORY_CHEST_ORE_NAME;
 
   }
 
