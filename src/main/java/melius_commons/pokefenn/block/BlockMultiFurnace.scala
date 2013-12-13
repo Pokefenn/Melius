@@ -6,7 +6,6 @@ import net.minecraft.world.World
 import net.minecraft.tileentity.TileEntity
 import net.minecraft.block.BlockContainer
 import melius_commons.pokefenn.Melius
-import melius_commons.pokefenn.tileentity.TileChestOre
 
 /**
  * Created with IntelliJ IDEA.
