@@ -11,6 +11,7 @@ import melius_commons.pokefenn.lib.Strings
 import melius_commons.pokefenn.block.ModBlocks
 import java.io.File
 import melius_commons.pokefenn.configuration.ConfigurationHandler
+import melius_commons.pokefenn.proxy.{ClientProxy, CommonProxy}
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,9 +23,10 @@ import melius_commons.pokefenn.configuration.ConfigurationHandler
 
 @Mod(modid = "melius", name = "Melius", version = "0.0.0",  modLanguage = "scala")
 @NetworkMod(channels = Array("melius"), clientSideRequired = true, serverSideRequired = false)
-@SidedProxy(clientSide = "melius_commons.pokefenn.proxy.ClientProxy", serverSide = "melius_commons.pokefenn.proxy.CommonProxy")
+//@SidedProxy(clientSide = "melius_commons.pokefenn.proxy.ClientProxy", serverSide = "melius_commons.pokefenn.proxy.CommonProxy")
 object Melius {
 
+  var proxy: CommonProxy = if (FMLCommonHandler.instance().getSide == Side.CLIENT) new ClientProxy else new CommonProxy
 
 
 
