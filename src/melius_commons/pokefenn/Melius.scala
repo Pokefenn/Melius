@@ -22,16 +22,17 @@ import melius_commons.pokefenn.proxy.{ClientProxy, CommonProxy}
  */
 
 @Mod(modid = "melius", name = "Melius", version = "0.0.0",  modLanguage = "scala")
-@NetworkMod(channels = Array("melius"), clientSideRequired = true, serverSideRequired = false)
-//@SidedProxy(clientSide = "melius_commons.pokefenn.proxy.ClientProxy", serverSide = "melius_commons.pokefenn.proxy.CommonProxy")
+@NetworkMod(/*channels = Array("melius"),*/ clientSideRequired = true, serverSideRequired = false)
 object Melius {
 
-  var proxy: CommonProxy = if (FMLCommonHandler.instance().getSide == Side.CLIENT) new ClientProxy else new CommonProxy
+  var proxy = CommonProxy = null
+
+  @SidedProxy(clientSide = "melius_commons.pokefenn.proxy.ClientProxy", serverSide = "melius_commons.pokefenn.proxy.CommonProxy")
 
 
 
-  @Instance("melius") var instance: Melius.type = null
-  final val logger: Logger = Logger.getLogger("melius")
+  //@Instance("melius") var instance: Melius.type = null
+  //final val logger: Logger = Logger.getLogger("melius")
 
 
 
@@ -44,14 +45,14 @@ object Melius {
 
   }
 
-  @EventHandler def init(evt: FMLInitializationEvent) {
+  @EventHandler def init(event: FMLInitializationEvent) {
 
 
 
   }
 
 
-  @EventHandler def postInit(evt: FMLPostInitializationEvent) {
+  @EventHandler def postInit(event: FMLPostInitializationEvent) {
 
 
 
