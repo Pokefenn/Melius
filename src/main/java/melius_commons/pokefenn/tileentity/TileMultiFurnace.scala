@@ -12,7 +12,9 @@ import net.minecraft.entity.player.EntityPlayer
  * Time: 15:13
 
  */
-class TileMultiFurnace extends TileEntity with IInventory {
+abstract class TileMultiFurnace extends TileEntity with IInventory {
+
+  /*
 
   final val INVENTORY_SIZE: Int = 1
   final val INVENTORY_SLOT_INDEX: Int = 0
@@ -93,4 +95,7 @@ class TileMultiFurnace extends TileEntity with IInventory {
     return true;
 
   }
+
+  */
+
 }

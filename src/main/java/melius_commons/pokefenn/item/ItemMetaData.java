@@ -2,6 +2,7 @@ package melius_commons.pokefenn.item;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
+import melius_commons.pokefenn.Melius;
 import melius_commons.pokefenn.lib.Strings;
 import net.minecraft.client.renderer.texture.IconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -20,7 +21,7 @@ import java.util.List;
  */
 public class ItemMetaData extends Item {
 
-    private static final String[] ITEMS_NAMES = new String[] { "ChlorophyllicIngot", "TotemicWood" };
+    private static final String[] ITEMS_NAMES = new String[] { "Foo", "FooBar", "Test" };
 
     @SideOnly(Side.CLIENT)
     private Icon[] icons;
@@ -29,6 +30,7 @@ public class ItemMetaData extends Item {
 
         super(id - 256);
         this.setHasSubtypes(true);
+        this.setCreativeTab(Melius.tabsMelius);
 
     }
 

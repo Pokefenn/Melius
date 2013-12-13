@@ -1,5 +1,10 @@
 package melius_commons.pokefenn.item
 
+import cpw.mods.fml.common.registry.GameRegistry
+import melius_commons.pokefenn.lib.{ItemIds, Strings}
+import net.minecraft.block.Block
+import net.minecraft.item.Item
+
 /**
  * Created with IntelliJ IDEA.
  * User: Pokefenn
@@ -9,10 +14,13 @@ package melius_commons.pokefenn.item
  */
 object ModItems {
 
+  var metaData: Item = null
+
   def init(){
 
+    metaData = new ItemMetaData(ItemIds.META_DATA);
 
-
+    //GameRegistry.registerItem(metaData, Strings.META_DATA_NAME)
 
   }
 
