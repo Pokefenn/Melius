@@ -3,6 +3,7 @@ package melius_commons.pokefenn.block
 import cpw.mods.fml.common.registry.GameRegistry
 import melius_commons.pokefenn.lib.Strings
 import net.minecraft.block.Block
+import melius_commons.pokefenn.lib.BlockIds
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,7 +12,7 @@ import net.minecraft.block.Block
  * Time: 11:25
 
  */
-class ModBlocks {
+object ModBlocks {
 
   var multiFurnace: Block = null
 
@@ -19,8 +20,10 @@ class ModBlocks {
   def init(){
 
 
+    multiFurnace = new BlockMultiFurnace(ItemIds.MULTI_FURNACE)
 
-  GameRegistry.registerBlock(multiFurnace, Strings.MULTI_FURNACE_NAME)
+    GameRegistry.registerBlock(multiFurnace, Strings.MULTI_FURNACE_NAME)
+
 }
 
 

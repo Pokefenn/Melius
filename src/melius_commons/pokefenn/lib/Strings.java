@@ -13,7 +13,7 @@ public class Strings {
     public static final String version = "0.0.0";
 
 
-    public static
+    public static final String MULTI_FURNACE_NAME = "multiFurnace";
 
 
 
