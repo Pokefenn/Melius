@@ -7,6 +7,14 @@ package melius_commons.pokefenn.item
  * Time: 11:45
 
  */
-class ModItems {
+object ModItems {
+
+  def init(){
+
+
+
+
+  }
+
 
 }

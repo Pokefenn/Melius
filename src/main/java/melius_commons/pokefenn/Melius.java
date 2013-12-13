@@ -10,6 +10,7 @@ import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.common.network.NetworkMod;
 import melius_commons.pokefenn.block.ModBlocks;
 import melius_commons.pokefenn.configuration.ConfigurationHandler;
+import melius_commons.pokefenn.item.ModItems;
 import melius_commons.pokefenn.lib.Strings;
 import melius_commons.pokefenn.packet.PacketHandler;
 import melius_commons.pokefenn.proxy.CommonProxy;
@@ -47,6 +48,10 @@ public class Melius {
         ConfigurationHandler.init(new File(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + Strings.modid + File.separator + Strings.name + ".cfg"));
 
         ModBlocks.init();
+
+        ModItems.init();
+
+
 
     }
 

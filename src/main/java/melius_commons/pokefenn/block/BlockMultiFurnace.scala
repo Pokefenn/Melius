@@ -5,6 +5,7 @@ import melius_commons.pokefenn.lib.Strings
 import net.minecraft.world.World
 import net.minecraft.tileentity.TileEntity
 import net.minecraft.block.BlockContainer
+import melius_commons.pokefenn.Melius
 
 /**
  * Created with IntelliJ IDEA.
@@ -17,6 +18,7 @@ class BlockMultiFurnace(id:Int) extends BlockContainer(id:Int, Material.rock) {
 
   this.setUnlocalizedName(Strings.MULTI_FURNACE_NAME)
   this.setHardness(5)
+  this.setCreativeTab(Melius.tabsMelius);
 
   def createNewTileEntity(world: World): TileEntity = ???
 }
