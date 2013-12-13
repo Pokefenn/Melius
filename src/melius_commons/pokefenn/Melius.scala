@@ -22,6 +22,8 @@ import melius_commons.pokefenn.lib.Strings
 object Melius {
 
 
+
+
   @Instance("melius") var instance: Melius.type = null
   final val logger: Logger = Logger.getLogger("melius")
 
