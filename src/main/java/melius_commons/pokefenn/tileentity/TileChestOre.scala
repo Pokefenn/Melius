@@ -23,6 +23,7 @@ class TileChestOre extends TileEntity with IInventory {
 
 
 
+
   //val TEMP_VAL = 1;
 
   def closeChest(){
