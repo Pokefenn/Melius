@@ -12,7 +12,7 @@ import net.minecraft.entity.player.EntityPlayer
  * Time: 16:03
 
  */
-abstract class TileChestOre extends TileEntity with IInventory {
+class TileChestOre extends TileEntity with IInventory {
 
   final val INVENTORY_SIZE: Int = 1
   final val INVENTORY_SLOT_INDEX: Int = 0
@@ -21,7 +21,6 @@ abstract class TileChestOre extends TileEntity with IInventory {
 
   inventory = new Array[ItemStack](INVENTORY_SIZE)
 
-  /*
 
 
   //val TEMP_VAL = 1;
@@ -95,6 +94,6 @@ abstract class TileChestOre extends TileEntity with IInventory {
 
   }
 
-*/
+
 
 }

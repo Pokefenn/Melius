@@ -1,8 +1,12 @@
 package melius_commons.pokefenn.block
 
 import net.minecraft.block.material.Material
-import net.minecraft.block.Block
+import net.minecraft.block.{BlockContainer, Block}
 import melius_commons.pokefenn.lib.Strings
+import melius_commons.pokefenn.Melius
+import net.minecraft.world.World
+import net.minecraft.tileentity.TileEntity
+import melius_commons.pokefenn.tileentity.TileChestOre
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,12 +15,16 @@ import melius_commons.pokefenn.lib.Strings
  * Time: 15:53
 
  */
-class BlockChestOre(id:Int) extends Block(id:Int, Material.rock) {
+class BlockChestOre(id:Int) extends BlockContainer(id:Int, Material.rock) {
 
   this.setUnlocalizedName(Strings.CHEST_ORE_NAME)
   this.setHardness(1)
-  this.setC
+  this.setCreativeTab(Melius.tabsMelius)
 
+  def createNewTileEntity(world: World): TileEntity = {
 
+    return new TileChestOre()
+
+  }
 
 }
