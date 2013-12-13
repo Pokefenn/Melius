@@ -37,7 +37,7 @@ object TileMultiFurnace extends TileEntity with IInventory {
 
   }
 
-  def setInventorySlotContents(i: Int, itemstack: ItemStack){
+  def setInventorySlotContents(slotIndex: Int, itemstack: ItemStack){
 
   }
 
@@ -47,18 +47,18 @@ object TileMultiFurnace extends TileEntity with IInventory {
 
   }
 
-  def getStackInSlot(i: Int): ItemStack = {
+  def getStackInSlot(slotIndex: Int): ItemStack = {
 
-    return ItemStack;
+    return inventory(slotIndex)
   }
 
-  def decrStackSize(i: Int, j: Int): ItemStack = {
+  def decrStackSize(slotIndex: Int, decrementAmount: Int): ItemStack = {
 
     return ItemStack;
 
   }
 
-  def getStackInSlotOnClosing(i: Int): ItemStack = {
+  def getStackInSlotOnClosing(slotIndex: Int): ItemStack = {
 
     return ItemStack;
 
@@ -78,7 +78,7 @@ object TileMultiFurnace extends TileEntity with IInventory {
 
   def getInventoryStackLimit: Int = {
 
-    return TEMP_VAL;
+    return 64;
 
   }
 
@@ -88,7 +88,7 @@ object TileMultiFurnace extends TileEntity with IInventory {
 
   }
 
-  def isItemValidForSlot(i: Int, itemstack: ItemStack): Boolean = {
+  def isItemValidForSlot(slotIndex: Int, itemstack: ItemStack): Boolean = {
 
     return true;
 

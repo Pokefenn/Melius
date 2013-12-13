@@ -7,4 +7,8 @@ package melius_commons.pokefenn.proxy;
  * Time: 12:38
  */
 public class CommonProxy {
+
+
+
+
 }
