@@ -52,14 +52,14 @@ public class ContainerChestOre extends Container {
             ItemStack slotItemStack = slot.getStack();
             itemStack = slotItemStack.copy();
 
-            if (slotIndex < TileChestOre.INVENTORY_SIZE) {
+            if (slotIndex < 1 /*BLAME JAVA THIS SHOULD NOT BE A CONSTANT*/) {
 
                 if (!this.mergeItemStack(slotItemStack, 1, inventorySlots.size(), true)) {
                     return null;
                 }
             }
             else {
-                if (!this.mergeItemStack(slotItemStack, 0, TileChestOre.INVENTORY_SIZE, false)) {
+                if (!this.mergeItemStack(slotItemStack, 0, 1/* REMEMBER THIS IS A BROKEN THING #blamejava*/, false)) {
                     return null;
                 }
             }
