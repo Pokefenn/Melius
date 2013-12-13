@@ -15,6 +15,7 @@ import melius_commons.pokefenn.item.ModItems;
 import melius_commons.pokefenn.lib.Strings;
 import melius_commons.pokefenn.packet.PacketHandler;
 import melius_commons.pokefenn.proxy.CommonProxy;
+import melius_commons.pokefenn.tileentity.TileChestOre;
 import melius_commons.pokefenn.tileentity.TileMultiFurnace;
 import melius_commons.pokefenn.util.CreativeTabMelius;
 import net.minecraft.creativetab.CreativeTabs;
