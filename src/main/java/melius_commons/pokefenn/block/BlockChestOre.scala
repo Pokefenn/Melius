@@ -34,8 +34,9 @@ class BlockChestOre(id:Int) extends BlockContainer(id:Int, Material.rock) {
 
       if (!world.isRemote) {
 
-        val tileChestOre: TileChestOre = world.getBlockTileEntity(x, y, z).asInstanceOf[TileChestOree]
+        val tileChestOre: TileChestOre = world.getBlockTileEntity(x, y, z).asInstanceOf[TileChestOre]
         if (tileChestOre != null) {
+
           player.openGui(Melius.instance, GuiIds.CHEST_ORE_GUI_ID, world, x, y, z)
         }
       }
