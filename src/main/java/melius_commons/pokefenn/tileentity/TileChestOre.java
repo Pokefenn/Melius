@@ -1,5 +1,6 @@
 package melius_commons.pokefenn.tileentity;
 
+import melius_commons.pokefenn.lib.Strings;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
@@ -90,12 +91,12 @@ public class TileChestOre extends TileEntity implements IInventory {
 
     @Override
     public String getInvName() {
-        return null;
+        return Strings.INVENTORY_CHEST_ORE_NAME;
     }
 
     @Override
     public boolean isInvNameLocalized() {
-        return false;
+        return true;
     }
 
     @Override

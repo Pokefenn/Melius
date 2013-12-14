@@ -19,6 +19,7 @@ import melius_commons.pokefenn.proxy.CommonProxy;
 import melius_commons.pokefenn.tileentity.TileChestOre;
 import melius_commons.pokefenn.tileentity.TileMultiFurnace;
 import melius_commons.pokefenn.util.CreativeTabMelius;
+import melius_commons.pokefenn.util.LocalizationHandler;
 import net.minecraft.creativetab.CreativeTabs;
 
 import java.io.File;
@@ -50,12 +51,15 @@ public class Melius {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
 
+
+
         ConfigurationHandler.init(new File(event.getModConfigurationDirectory().getAbsolutePath() + File.separator + Strings.modid + File.separator + Strings.name + ".cfg"));
 
         ModBlocks.init();
 
         ModItems.init();
 
+        LocalizationHandler.loadLanguages();
 
 
     }
