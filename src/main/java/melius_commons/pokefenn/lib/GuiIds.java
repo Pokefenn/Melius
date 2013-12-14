@@ -8,7 +8,7 @@ package melius_commons.pokefenn.lib;
  */
 public class GuiIds {
 
-    public static int CHEST_ORE_GUI_ID = 0;
+    public static final int CHEST_ORE_GUI_ID = 0;
 
 
 }

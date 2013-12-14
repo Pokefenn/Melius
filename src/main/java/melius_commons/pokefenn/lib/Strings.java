@@ -20,6 +20,8 @@ public class Strings {
     public static final String MULTI_FURNACE_NAME = "multiFurnace";
     public static final String TE_MULTI_FURNACE_NAME = "tileEntityMultiFurnace";
     public static final String INVENTORY_MULTI_FURNACE_NAME = "containerMultiFurnace";
+    
+    public static final String TE_FURNACE_IO_NAME = "tileEntityFuranceIO";
 
     public static final String CHEST_ORE_NAME = "chestOre";
     public static final String TE_CHEST_ORE_NAME = "tileEntityChestOre";
