@@ -6,6 +6,7 @@ import net.minecraft.world.World
 import net.minecraft.tileentity.TileEntity
 import net.minecraft.block.BlockContainer
 import melius_commons.pokefenn.Melius
+import melius_commons.pokefenn.tileentity.{TileMultiFurnace, TileChestOre}
 
 /**
  * Created with IntelliJ IDEA.
@@ -22,7 +23,7 @@ class BlockMultiFurnace(id:Int) extends BlockContainer(id:Int, Material.rock) {
 
   def createNewTileEntity(world: World): TileEntity = {
 
-    return new TileChestOre()
+    return new TileMultiFurnace()
 
   }
 }
