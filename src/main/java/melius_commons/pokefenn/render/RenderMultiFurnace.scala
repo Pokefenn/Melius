@@ -10,19 +10,21 @@ import net.minecraft.client.renderer.texture.IconRegister
 import codechicken.lib.render.IconTransformation
 import codechicken.lib.render.MultiIconTransformation
 import codechicken.lib.lighting.PlanarLightModel
+import codechicken.lib.vec.Cuboid6
 
 object RenderMultiFurnace
 {
-    val ioModel = buildIOModel()
+    var io_inside:CCModel = _
+    var io_shell:CCModel = _
     
 	var sideIcon:Icon = _
 	var plainIcon:Icon = _
 	var iconT:MultiIconTransformation = _
 	
-	private def buildIOModel() = {
-        val models = CCModel.parseObjModels(new ResourceLocation("melius", "models/io.obj"), 7, new SwapYZ)
-	    MultiIconTransformation.setIconIndex(models.get("io_sides"), 1)
-	    CCModel.combine(models.values)
+	{
+        io_inside = CCModel.parseObjModels(new ResourceLocation("melius", "models/io.obj"), 7, new SwapYZ).get("io_inside")
+        io_shell = CCModel.quadModel(20).generateBlock(0, Cuboid6.full, 2).computeNormals.apply(new Translation(-0.5, -0.5, -0.5))
+        MultiIconTransformation.setIconIndex(io_shell, 4, 20, 1)
     }
 	
 	def loadIcons(r:IconRegister) = {
@@ -34,8 +36,9 @@ object RenderMultiFurnace
 	    plainIcon
 	}
 	
-	def renderWorld(x:Int, y:Int, z:Int, side:Int) {
+	def renderStandardIO(x:Int, y:Int, z:Int, side:Int) {
 	    val t = Rotation.sideRotations(side).`with`(new Translation(x+0.5, y+0.5, z+0.5))
-	    ioModel.render(t, iconT, PlanarLightModel.standardLightModel)
+	    io_inside.render(t, iconT, PlanarLightModel.standardLightModel)
+	    io_shell.render(t, iconT, PlanarLightModel.standardLightModel)
 	}
 }
