@@ -26,6 +26,7 @@ object RenderHelper extends TileEntitySpecialRenderer with ISimpleBlockRendering
         CCRenderState.reset()
         CCRenderState.setBrightness(world, x, y, z)
         CCRenderState.setColour(-1)
+        CCRenderState.useModelColours(true)
         val tile = world.getBlockTileEntity(x, y, z).asInstanceOf[TileFurnaceIO]
         if(tile != null)
         	RenderMultiFurnace.renderWorld(x, y, z, tile.orient)
@@ -38,6 +39,7 @@ object RenderHelper extends TileEntitySpecialRenderer with ISimpleBlockRendering
         CCRenderState.pullLightmap()
         CCRenderState.useNormals(true)
         CCRenderState.setColour(-1)
+        CCRenderState.useModelColours(true)
         
         CCRenderState.startDrawing(7)
         RenderMultiFurnace.renderWorld(0, 0, 0, 4)

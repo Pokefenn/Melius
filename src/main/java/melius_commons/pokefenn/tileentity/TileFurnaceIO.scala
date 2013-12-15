@@ -11,10 +11,12 @@ class TileFurnaceIO extends TileEntity with ICustomPacketTile
 	var orient:Byte = _
 	
 	override def writeToNBT(tag:NBTTagCompound) {
+	    super.writeToNBT(tag)
 	    tag.setByte("orient", orient)
 	}
 	
 	override def readFromNBT(tag:NBTTagCompound) {
+	    super.readFromNBT(tag)
 	    orient = tag.getByte("orient")
 	}
 	
