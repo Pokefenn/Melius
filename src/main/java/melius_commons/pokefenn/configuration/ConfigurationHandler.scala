@@ -11,42 +11,40 @@ import melius_commons.pokefenn.lib.{BlockIds, Strings}
  * User: Pokefenn
  * Date: 13/12/13
  * Time: 11:50
-
  */
-object ConfigurationHandler {
+object ConfigurationHandler
+{
 
-  def init(configFile: File) {
-    configuration = new Configuration(configFile)
-    try {
-      configuration.load
+    def init(configFile: File) {
+        configuration = new Configuration(configFile)
+        try {
+            configuration.load()
 
-      BlockIds.MULTI_FURNACE = configuration.getBlock(Strings.MULTI_FURNACE_NAME, BlockIds.MULTI_FURNACE_DEFUALT).getInt(BlockIds.MULTI_FURNACE_DEFUALT)
-      BlockIds.CHEST_ORE = configuration.getBlock(Strings.CHEST_ORE_NAME, BlockIds.CHEST_ORE_DEFAULT).getInt(BlockIds.CHEST_ORE_DEFAULT)
+            //TODO generalise to more blocks
+            BlockIds.MELIUS = configuration.getBlock("blockMelius", BlockIds.MELIUS_DEFUALT).getInt(BlockIds.MELIUS_DEFUALT)
+            BlockIds.CHEST_ORE = configuration.getBlock(Strings.CHEST_ORE_NAME, BlockIds.CHEST_ORE_DEFAULT).getInt(BlockIds.CHEST_ORE_DEFAULT)
 
+        }
+        catch {
+            case e: Exception => {
+                FMLLog.log(Level.SEVERE, e, Strings.name + " has had a problem loading its configuration, go ask on the forums :p")
+            }
+        }
+        finally {
+            configuration.save()
+        }
     }
-    catch {
-      case e: Exception => {
-        FMLLog.log(Level.SEVERE, e, Strings.name + " has had a problem loading its configuration, go ask on the forums :p")
-      }
+
+    def set(categoryName: String, propertyName: String, newValue: String) {
+        configuration.load()
+        if (configuration.getCategoryNames.contains(categoryName)) {
+            if (configuration.getCategory(categoryName).containsKey(propertyName)) {
+                configuration.getCategory(categoryName).get(propertyName).set(newValue)
+            }
+        }
+        configuration.save()
     }
-    finally {
-      configuration.save
-    }
-  }
 
-  def set(categoryName: String, propertyName: String, newValue: String) {
-    configuration.load
-    if (configuration.getCategoryNames.contains(categoryName)) {
-      if (configuration.getCategory(categoryName).containsKey(propertyName)) {
-        configuration.getCategory(categoryName).get(propertyName).set(newValue)
-      }
-    }
-    configuration.save
-  }
-
-  var configuration: Configuration = null
-  final val CATEGORY_GAMEPLAY: String = "gameplay"
-
-
-
+    var configuration: Configuration = null
+    final val CATEGORY_GAMEPLAY: String = "gameplay"
 }

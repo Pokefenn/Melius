@@ -49,15 +49,14 @@ class ClientProxy extends CommonProxy
     @SideOnly(Side.CLIENT)
     override def preInit() {
 		super.preInit()
-		
+
+        RenderHelper.load()
 		PacketCustom.assignHandler(Melius, MeliusCPH)
-		RenderingRegistry.registerBlockHandler(RenderHelper)
 	}
     
     @SideOnly(Side.CLIENT)
     override def init() {
         super.init()
-        
     }
     
     @SideOnly(Side.CLIENT)

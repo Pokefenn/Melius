@@ -8,12 +8,9 @@ package melius_commons.pokefenn.lib;
  */
 public class BlockIds {
 
-    public static int MULTI_FURNACE;
-    public static int MULTI_FURNACE_DEFUALT = 3001;
+    public static int MELIUS;
+    public static int MELIUS_DEFUALT = 3001;
 
     public static int CHEST_ORE;
     public static int CHEST_ORE_DEFAULT = 3002;
-
-
-
 }

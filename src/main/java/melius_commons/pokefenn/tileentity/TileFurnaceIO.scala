@@ -1,35 +1,45 @@
 package melius_commons.pokefenn.tileentity
 
-import net.minecraft.tileentity.TileEntity
 import net.minecraft.nbt.NBTTagCompound
 import codechicken.lib.packet.PacketCustom
-import melius_commons.pokefenn.Melius
-import codechicken.lib.packet.ICustomPacketTile
+import melius_commons.pokefenn.render.RenderMultiFurnace
+import net.minecraft.entity.EntityLivingBase
+import net.minecraft.item.ItemStack
+import codechicken.lib.vec.Rotation
 
-class TileFurnaceIO extends TileEntity with ICustomPacketTile
+class TileFurnaceIO extends TileMultiblock[MultiFurnace]
 {
-	var orient:Byte = _
-	
-	override def writeToNBT(tag:NBTTagCompound) {
-	    super.writeToNBT(tag)
-	    tag.setByte("orient", orient)
-	}
-	
-	override def readFromNBT(tag:NBTTagCompound) {
-	    super.readFromNBT(tag)
-	    orient = tag.getByte("orient")
-	}
-	
-	override def getDescriptionPacket() = {
-	    new PacketCustom(Melius, 1)
-		    .setChunkDataPacket()
-		    .writeCoord(xCoord, yCoord, zCoord)
-		    .writeByte(orient)
-		    .toPacket()
-	}
-	
-	def handleDescriptionPacket(packet:PacketCustom) {
-	    orient = packet.readByte
-	    worldObj.markBlockForUpdate(xCoord, yCoord, zCoord)
-	}
+    var orient:Byte = _
+
+    def createMulti = new MultiFurnace(this)
+    def getRenderInstance = RenderMultiFurnace
+
+    override def save(tag:NBTTagCompound) {
+        super.save(tag)
+        tag.setByte("orient", orient)
+    }
+
+    override def load(tag:NBTTagCompound) {
+        super.load(tag)
+        orient = tag.getByte("orient")
+    }
+
+    override def writeDesc(packet:PacketCustom) {
+        super.writeDesc(packet)
+        packet.writeByte(orient)
+    }
+
+    override def readDesc(packet:PacketCustom) {
+        super.readDesc(packet)
+        orient = packet.readByte
+    }
+
+    override def onPlaced(entity:EntityLivingBase, stack:ItemStack) {
+        orient = (Rotation.getSideFromLookAngle(entity)^1).toByte
+    }
+
+    override def updateEntity() {
+        super.updateEntity()
+        //TODO validate
+    }
 }

@@ -10,15 +10,9 @@ import melius_commons.pokefenn.block.ModBlocks
  * User: Pokefenn
  * Date: 13/12/13
  * Time: 13:01
-
  */
-class CreativeTabMelius(par1:Int, par2Str:String) extends CreativeTabs(par1:Int, par2Str:String) {
-
-
-   @SideOnly(Side.CLIENT) override def getTabIconItemIndex(): Int = {
-
-    return ModBlocks.multiFurnace.blockID
-
-
-  }
+class CreativeTabMelius(par1: Int, par2Str: String) extends CreativeTabs(par1: Int, par2Str: String)
+{
+    @SideOnly(Side.CLIENT)
+    override def getTabIconItemIndex = ModBlocks.blockMelius.blockID
 }

@@ -8,8 +8,5 @@
     <entry key="item.melius:notARealItemNameYet.name">Kappaman</entry>
 
     <entry key="tile.chestOre.name">Ore Chest</entry>
-    <entry key="tile.multiFurnace.name">Multi Furnace</entry>
-    
-
-    
+    <entry key="tile.blockMelius.name">Furnace IO</entry>
 </properties>
