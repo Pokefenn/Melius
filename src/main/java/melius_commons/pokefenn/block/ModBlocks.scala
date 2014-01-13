@@ -14,13 +14,11 @@ import net.minecraft.block.Block
 object ModBlocks
 {
     var blockMelius:Block = _
-    var chestOre:Block = _
 
     def init() {
         blockMelius = new BlockMelius(BlockIds.MELIUS)
-        chestOre = new BlockChestOre(BlockIds.CHEST_ORE)
 
         GameRegistry.registerBlock(blockMelius, blockMelius.getUnlocalizedName)
-        GameRegistry.registerBlock(chestOre, Strings.CHEST_ORE_NAME)
+
     }
 }

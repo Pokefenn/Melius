@@ -6,7 +6,7 @@ package melius_commons.pokefenn.recipe;
  * Date: 13/12/13
  * Time: 16:52
  */
-public class CraftingTableRecipesMelius {
+public class RecipesMelius {
 
     public static void init(){
 

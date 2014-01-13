@@ -1,0 +1,21 @@
+[
+{
+  "modid": "melius",
+  "name": "Melius",
+  "description": "Vannila extended",
+  "version": "0.0.0",
+  "url": "www.",
+  "updateUrl": "",
+  "authorList": [
+    "Pokefenn"
+    "Chickenbones"
+  ],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [
+  ],
+  "parent":"",
+  "dependencies": [
+  ]
+}
+]

@@ -10,6 +10,6 @@ public class ItemIds {
 
     public static int META_DATA;
 
-    public static int META_DATA_DEFAULt = 2001;
+    public static int META_DATA_DEFAULT = 2001;
 
 }

@@ -4,7 +4,7 @@ import net.minecraft.block.material.Material
 import melius_commons.pokefenn.lib.Strings
 import net.minecraft.block.Block
 import melius_commons.pokefenn.Melius
-import melius_commons.pokefenn.tileentity.{TileMelius, TileMultiFurnace, TileChestOre, TileFurnaceIO}
+import melius_commons.pokefenn.tileentity.{TileMelius, TileMultiFurnace, TileFurnaceIO}
 import net.minecraft.client.renderer.texture.IconRegister
 import melius_commons.pokefenn.render.RenderHelper
 import net.minecraft.entity.EntityLivingBase

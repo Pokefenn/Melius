@@ -14,7 +14,7 @@ import net.minecraft.item.Item
  */
 object ModItems {
 
-  var metaData: Item = null
+  var metaData:Item = _
 
   def init(){
 

@@ -13,7 +13,7 @@ import melius_commons.pokefenn.configuration.ConfigurationHandler
 import java.io.File
 import cpw.mods.fml.common.event.FMLInitializationEvent
 
-@Mod(modid = "melius", name = "Melius", version = "0.0.0", modLanguage="scala")
+@Mod(modid = "melius", name = "Melius", version = "0.0.0", modLanguage= "scala")
 @NetworkMod(clientSideRequired = true, serverSideRequired = true, tinyPacketHandler=classOf[CustomTinyPacketHandler])
 object Melius
 {
@@ -22,7 +22,7 @@ object Melius
     
     @EventHandler
     def preInit(event:FMLPreInitializationEvent) {
-        ConfigurationHandler.init(new File(event.getModConfigurationDirectory, Strings.modid + "/" + Strings.name + ".cfg"))
+        ConfigurationHandler.init(new File(event.getModConfigurationDirectory, "melius.cfg"))
 
         MeliusProxy.preInit()
     }
